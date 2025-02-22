@@ -1,18 +1,21 @@
-package com.example.LibraryManagement.entity;
+package com.example.LibraryManagement.dto;
 
-import jakarta.persistence.*;
-
-//It tells the JPA provider (like Hibernate) that the class should be mapped to a database table.
-@Entity
-@Table (name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UserDTO {
     private Long id;
     private String name;
     private String email;
     private String password;
     private String role;
+
+    public UserDTO() {}
+
+    public UserDTO(Long id, String name, String email,String password, String role) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
 
     public Long getId() {
         return id;
