@@ -27,4 +27,6 @@ public class UserController {
         Optional<UserDTO> user = userService.findUserByEmail(email);
         return user.map(ResponseEntity::ok).orElseGet(()->ResponseEntity.notFound().build());
     }
+
+    //TODO: Role based authentication and only admin can register a user(Learn Spring Security)
 }
